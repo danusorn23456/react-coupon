@@ -7,8 +7,8 @@ export interface CouponProps extends HTMLAttributes<HTMLDivElement> {
   backgroundColor?: string;
   fontColor?: string;
   image?: string;
-  expireDate?: Date;
-  usedDate?: Date | "";
+  expire_at?: Date;
+  used_at?: Date | "";
   usedLabel?: (date: Date) => any;
   expireLabel?: (days: number) => any;
   tag?: string[];
@@ -21,9 +21,9 @@ function Coupon({
   fontColor = "#393939",
   usedLabel = (date: Date) => `used by ${date.toDateString()}`,
   expireLabel = (days: number) =>
-    days ? `Valid for ${days} days from now` : `expire`,
-  expireDate,
-  usedDate,
+    days ? `Valid for ${days} days from now` : `expired`,
+  expire_at,
+  used_at,
   image,
   tag,
   ...rest
@@ -47,7 +47,7 @@ function Coupon({
     return +remainingDays as number;
   }
 
-  const remaining = getRemainingDays(expireDate);
+  const remaining = getRemainingDays(expire_at);
 
   return (
     <div
@@ -74,7 +74,7 @@ function Coupon({
           ))}
         </div>
         <p className="r-coupon-date" style={{ color: fontColor }}>
-          {usedDate ? usedLabel(usedDate) : expireLabel(remaining)}
+          {used_at ? usedLabel(used_at) : expireLabel(remaining)}
         </p>
       </div>
     </div>

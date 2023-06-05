@@ -21,9 +21,9 @@ const coupons: CouponProps[] = [
     description: "minimium 3 orders",
     image:
       "https://static.vecteezy.com/system/resources/previews/011/016/165/original/realistic-3d-gift-box-cutout-free-png.png",
-    expireDate: getDatePlusTenDays(),
+    expire_at: getDatePlusTenDays(),
     backgroundColor: "#ffffff",
-    usedDate: new Date(),
+    used_at: new Date(),
     tag: ["new account"],
   },
   {
@@ -31,16 +31,16 @@ const coupons: CouponProps[] = [
     description: "minimium 500 THB",
     image:
       "https://static.vecteezy.com/system/resources/previews/008/854/705/original/3d-coin-for-finance-or-business-illustration-png.png",
-    expireDate: getDatePlusTenDays(),
-    usedDate: new Date(),
+    expire_at: getDatePlusTenDays(),
+    used_at: new Date(),
   },
   {
     title: "Free Shipping",
     description: "minimium 1200 THB",
     image:
       "https://cdn3d.iconscout.com/3d/premium/thumb/truck-6847901-5606997.png",
-    expireDate: getDatePlusTenDays(),
-    usedDate: "",
+    expire_at: getDatePlusTenDays(),
+    used_at: "",
   },
 ];
 
