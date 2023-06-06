@@ -66,6 +66,7 @@ function App() {
       >
         {coupons.map((coupon, index) => (
           <div
+            key={index}
             style={{
               marginBottom: 12,
               width: "100%",
@@ -73,7 +74,7 @@ function App() {
               flexDirection: "column",
             }}
           >
-            <Coupon key={index} {...coupon} />
+            <Coupon {...coupon} />
           </div>
         ))}
       </div>
